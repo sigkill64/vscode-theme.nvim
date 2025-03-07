@@ -1,8 +1,8 @@
-<h1 align="center">vscode.nvim</h1>
+<h1 align="center">vscode-theme.nvim</h1>
 
-vscode.nvim (formerly `codedark.nvim`) is a Lua port of [vim-code-dark](https://github.com/tomasiser/vim-code-dark) colorscheme for [neovim](https://github.com/neovim/neovim) with VScode's light and dark theme
+vscode-theme.nvim (formerly `codedark.nvim`) is a Lua port of [vim-code-dark](https://github.com/tomasiser/vim-code-dark) colorscheme for [neovim](https://github.com/neovim/neovim) with VScode's light and dark theme
 
-![VSCode.nvim](./demo.png)
+![VSCode-Theme.nvim](./demo.png)
 
 ## Supported Plugins
 
@@ -32,12 +32,12 @@ Install via package manager
 
 ```lua
 -- Packer:
-use 'Mofiqul/vscode.nvim'
+use 'sigkill64/vscode-theme.nvim'
 ```
 
 ```vim
 " Vim-Plug:
-Plug 'Mofiqul/vscode.nvim'
+Plug 'sigkill64/vscode-theme.nvim'
 ```
 
 ## ⚠️ Warnings
@@ -73,8 +73,8 @@ vim.o.background = 'dark'
 -- For light theme
 vim.o.background = 'light'
 
-local c = require('vscode.colors').get_colors()
-require('vscode').setup({
+local c = require('vscode_theme.colors').get_colors()
+require('vscode_theme').setup({
     -- Alternatively set style in setup
     -- style = 'light'
 
@@ -93,22 +93,22 @@ require('vscode').setup({
     -- Apply theme colors to terminal
     terminal_colors = true,
 
-    -- Override colors (see ./lua/vscode/colors.lua)
+    -- Override colors (see ./lua/vscode_theme/colors.lua)
     color_overrides = {
         vscLineNumber = '#FFFFFF',
     },
 
-    -- Override highlight groups (see ./lua/vscode/theme.lua)
+    -- Override highlight groups (see ./lua/vscode_theme/theme.lua)
     group_overrides = {
         -- this supports the same val table as vim.api.nvim_set_hl
-        -- use colors from this colorscheme by requiring vscode.colors!
+        -- use colors from this colorscheme by requiring vscode_theme.colors!
         Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
     }
 })
--- require('vscode').load()
+-- require('vscode_theme').load()
 
 -- load the theme without affecting devicon colors.
-vim.cmd.colorscheme "vscode"
+vim.cmd.colorscheme "vscode_theme"
 ```
 
 If you are using [`lualine`](https://github.com/hoob3rt/lualine.nvim), you can also enable the provided theme:
@@ -117,7 +117,7 @@ If you are using [`lualine`](https://github.com/hoob3rt/lualine.nvim), you can a
 require('lualine').setup({
     options = {
         -- ...
-        theme = 'vscode',
+        theme = 'vscode_theme',
         -- ...
     },
 })
@@ -191,8 +191,8 @@ require("bufferline").setup({
 ## Switching theme
 
 ```vim
-:lua require('vscode').load('light')
-:lua require('vscode').load('dark')
+:lua require('vscode_theme').load('light')
+:lua require('vscode_theme').load('dark')
 ```
 
 ## 🍭 Extra folder

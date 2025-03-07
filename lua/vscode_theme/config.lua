@@ -16,10 +16,10 @@ config.opts = {}
 config.setup = function(user_opts)
     -- backwards compatibility: let users still set settings with global vars
     local global_settings_opts = vim.tbl_extend('force', defaults, {
-        transparent = (vim.g.vscode_transparent == true or vim.g.vscode_transparent == 1),
-        italic_comments = (vim.g.vscode_italic_comment == true or vim.g.vscode_italic_comment == 1),
-        underline_links = (vim.g.vscode_underline_links == true or vim.g.vscode_underline_links == 1),
-        disable_nvimtree_bg = (vim.g.vscode_disable_nvim_tree_bg == true or vim.g.vscode_disable_nvim_tree_bg == 1),
+        transparent = (vim.g.vscode_theme_transparent == true or vim.g.vscode_theme_transparent == 1),
+        italic_comments = (vim.g.vscode_theme_italic_comment == true or vim.g.vscode_theme_italic_comment == 1),
+        underline_links = (vim.g.vscode_theme_underline_links == true or vim.g.vscode_theme_underline_links == 1),
+        disable_nvimtree_bg = (vim.g.vscode_theme_disable_nvim_tree_bg == true or vim.g.vscode_theme_disable_nvim_tree_bg == 1),
     })
 
     -- but override global vars settings with setup() settings
